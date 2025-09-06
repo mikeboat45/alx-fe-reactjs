@@ -1,6 +1,6 @@
 function MainContent() {
 	return(
-		<main>
+		<main style={{ backgroundColor:"white", color:'black' }}>
 			<p>I love to visit New York, Paris, and Tokyo.</p>
 		</main>
 	);
