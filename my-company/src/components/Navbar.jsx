@@ -7,7 +7,7 @@ export default function Navbar() {
 			<Link to='./Home' className='nav-link'>Home</Link>
 			<Link to="./About" className='nav-link'>About</Link>
 			<Link to="./Services" className='nav-link'>Services</Link>
-          	<Link to="./Contact" className='nav-link'>Contact</Link>
+          	<Link to="./components/Contact" className='nav-link'>Contact</Link>
 		</nav>
 	);
 }
