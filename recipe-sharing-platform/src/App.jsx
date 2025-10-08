@@ -1,10 +1,14 @@
-import data from "./data.json";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
+import RecipeDetail from "./components/RecipeDetail";
 
 export default function App() {
-  const myData = data.map((dataObj) => {
-    return <HomePage key={dataObj.id} {...dataObj} />;
-  });
-
-  return <div>{myData}</div>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe/:id" element={<RecipeDetail />} />
+      </Routes>
+    </Router>
+  );
 }
