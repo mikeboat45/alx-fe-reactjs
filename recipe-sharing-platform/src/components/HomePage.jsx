@@ -20,5 +20,9 @@ export default function HomePage(props) {
     );
   });
 
-  return <div>{myData}</div>;
+  return (
+    <div className="bg-gray-700 hover:bg-gray-400 p-4 text-xl rounded border-black border-1 shadow m-4">
+      {myData}
+    </div>
+  );
 }
