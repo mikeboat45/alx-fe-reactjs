@@ -1,28 +1,24 @@
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import recipeData from "../data.json";
 import RecipeCard from "./RecipeCard";
 
-export default function HomePage(props) {
-  const [recipe, setRecipe] = useState([]);
-
-  useEffect(() => {
-    setRecipe(recipeData);
-  });
-
-  const myData = recipeData.map((recipeObj) => {
-    return (
-      <RecipeCard
-        key={recipeObj.id}
-        image={recipeObj.image}
-        title={recipeObj.title}
-        summary={recipeObj.summary}
-      />
-    );
-  });
-
+export default function HomePage() {
   return (
-    <div className="bg-gray-700 hover:bg-gray-400 p-4 text-xl rounded border-black border-1 shadow m-4 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2">
-      {myData}
+    <div className="bg-gray-100 min-h-screen p-4 sm:p-8">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Our Recipes</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {recipeData.map((recipe) => (
+            <Link to={`/recipe/${recipe.id}`} key={recipe.id} className="block transform hover:scale-105 transition-transform duration-300">
+              <RecipeCard
+                image={recipe.image}
+                title={recipe.title}
+                summary={recipe.summary}
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
