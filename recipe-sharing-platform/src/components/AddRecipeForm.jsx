@@ -72,30 +72,31 @@ export default function AddRecipeForm() {
             {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="ingredients" className="block text-gray-700 font-semibold mb-2">Ingredients (one per line)</label>
-            <textarea
-              id="ingredients"
-              name="ingredients"
-              value={formData.ingredients}
-              onChange={handleChange}
-              rows="5"
-              className={`w-full px-3 py-2 border rounded-lg ${errors.ingredients ? 'border-red-500' : 'border-gray-300'}`}
-            ></textarea>
-            {errors.ingredients && <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>}
-          </div>
-
-          <div className="mb-6">
-            <label htmlFor="steps" className="block text-gray-700 font-semibold mb-2">Preparation Steps (one per line)</label>
-            <textarea
-              id="steps"
-              name="steps"
-              value={formData.steps}
-              onChange={handleChange}
-              rows="8"
-              className={`w-full px-3 py-2 border rounded-lg ${errors.steps ? 'border-red-500' : 'border-gray-300'}`}
-            ></textarea>
-            {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label htmlFor="ingredients" className="block text-gray-700 font-semibold mb-2">Ingredients (one per line)</label>
+              <textarea
+                id="ingredients"
+                name="ingredients"
+                value={formData.ingredients}
+                onChange={handleChange}
+                rows="8"
+                className={`w-full px-3 py-2 border rounded-lg ${errors.ingredients ? 'border-red-500' : 'border-gray-300'}`}
+              ></textarea>
+              {errors.ingredients && <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>}
+            </div>
+            <div>
+              <label htmlFor="steps" className="block text-gray-700 font-semibold mb-2">Preparation Steps (one per line)</label>
+              <textarea
+                id="steps"
+                name="steps"
+                value={formData.steps}
+                onChange={handleChange}
+                rows="8"
+                className={`w-full px-3 py-2 border rounded-lg ${errors.steps ? 'border-red-500' : 'border-gray-300'}`}
+              ></textarea>
+              {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
+            </div>
           </div>
 
           <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-transform duration-300">
